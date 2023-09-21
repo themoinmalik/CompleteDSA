@@ -4,12 +4,33 @@ import java.util.Stack;
 
 public class StackDSA {
 
-    public static void main(String[] args) {
+    private static int top = -1;
+    private static int size = Integer.MAX_VALUE;
+    private static int[] stack_arr = new int[size];
 
-        Stack<Integer> stack = new Stack<>();
-        stack.push(12);
+    // push data in stack ...
 
-        System.out.println(stack.pop());
+    public static void push(int data){
+
+        if (top == stack_arr[size] -1 ){
+            System.out.println("Stack Overflow");
+            return;
+        }
+        top = top + 1;
+        stack_arr[top] = data;
 
     }
+
+    // pop ...
+
+    public static void pop(){
+
+        if (top == -1){
+            System.out.println("stack Underflow");
+            return;
+        }
+        System.out.println(stack_arr[top]);
+        top = top-1;
+    }
+
 }
