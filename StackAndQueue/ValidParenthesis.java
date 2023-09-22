@@ -6,12 +6,12 @@ public class ValidParenthesis {
 
     public static void main(String[] args) {
 
-        boolean ans = checkParanthesis("()[");
+        boolean ans = checkParenthesis("()[");
         System.out.println(ans);
 
     }
 
-    public static boolean checkParanthesis(String str){
+    public static boolean checkParenthesis(String str){
         Stack<Character> stack = new Stack<>();
 
         for (char i: str.toCharArray()) {
