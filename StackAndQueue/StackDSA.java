@@ -8,7 +8,7 @@ public class StackDSA {
     private static final int size = Integer.MAX_VALUE;
     private static final int[] stack_arr = new int[size];
 
-    // push data in stack ...
+    // push data st1 stack ...
     public static void push(int data){
 
         if (top == stack_arr[size] -1 ){

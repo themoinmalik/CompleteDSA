@@ -1,4 +1,4 @@
-package src.pwskils.oops;
+package pwskils.oops;
 
 public class ClassAndObject {
 
