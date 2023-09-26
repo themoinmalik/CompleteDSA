@@ -37,7 +37,6 @@ public class MyQueue {
             transferTost2();
         }
         int ans = st2.peek();
-
          return ans;
     }
 
