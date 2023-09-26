@@ -7,7 +7,7 @@ public class NGR {
 
     public static void main(String[] args) {
 
-        int[] arr = new int[]{6, 4, 12, 5, 2, 10};
+        int[] arr = new int[]{1,3,2,4};
 //        int[] ans = right(arr);
         int[] ans1 = rightStack(arr);
         System.out.println(Arrays.toString(ans1));
