@@ -32,7 +32,6 @@ public class NGL {
                 }
             }
             stack.push(arr[i]);
-
         }
 
         return newArr;
