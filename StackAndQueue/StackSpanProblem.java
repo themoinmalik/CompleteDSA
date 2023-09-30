@@ -8,7 +8,7 @@ public class StackSpanProblem {
 
     public static void main(String[] args) {
 
-        int[] arr = new int[]{2,4,5,6};
+        int[] arr = new int[]{100, 80, 60, 70, 60, 75, 85};
         int[] ans = spanStack(arr);
         System.out.println(Arrays.toString(ans));
 
@@ -19,20 +19,16 @@ public class StackSpanProblem {
         for (int i = 0; i < arr.length; i++) {
             int count = 1;
             for (int j = i-1; j >=0 ; j--) {
-
                 if (arr[j]<=arr[i]){
                     count++;
                 }
                 else {
                     break;
                 }
-
             }
             arr[i] = count;
         }
-
         return arr;
-
     }
 
 
@@ -43,20 +39,17 @@ public class StackSpanProblem {
         Stack<Integer> stack = new Stack<>();
 
         for (int i = 0; i < arr.length; i++) {
-
             newArr[i] = 1;
-
-            while (!stack.empty()){
-                int top = stack.peek();
-
-                if (arr[top]<=arr[i]){
-                    newArr[i]++;
+            while (!stack.empty() && arr[stack.peek()]<arr[i]){
+                stack.pop();
+                if (stack.empty()){
+                    newArr[i] = i+1;
+                }else {
+                    newArr[i] = i - stack.peek();
                 }
             }
             stack.push(i);
-
         }
-
         return newArr;
     }
 }
