@@ -32,7 +32,6 @@ public class StackSpanProblem {
     }
 
 
-
     public static int[] spanStack(int[] arr){
 
         int[] newArr = new int[arr.length];
@@ -42,11 +41,11 @@ public class StackSpanProblem {
             newArr[i] = 1;
             while (!stack.empty() && arr[stack.peek()]<arr[i]){
                 stack.pop();
-                if (stack.empty()){
-                    newArr[i] = i+1;
-                }else {
-                    newArr[i] = i - stack.peek();
-                }
+            }
+            if (stack.empty()){
+                newArr[i] = i+1;
+            }else {
+                newArr[i] = i - stack.peek();
             }
             stack.push(i);
         }
