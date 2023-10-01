@@ -1,47 +1,97 @@
 package src.StackAndQueue;
 
+import java.util.Stack;
+
 public class Histogram {
 
     public static void main(String[] args) {
 
-        int[] arr = new int[]{3, 5, 1, 7, 5, 9};
-        int ans = histogram(arr);
+        int[] arr = new int[]{2,1,5,6,2,3};   // 2,1,5,6,2,3
+        int ans = histogramStack(arr);
         System.out.println(ans);
 
     }
 
+//    public static int histogram(int[] arr){
+//
+//         int max = Integer.MIN_VALUE;
+//
+//        for (int i = 0; i < arr.length; i++) {
+//            int count = 1;
+//            for (int j = i-1; j >=0 ; j--) {
+//                if (arr[j]>arr[i]){
+//                    count++;
+//                }else {
+//                    break;
+//                }
+//            }
+//
+//            for (int j = i+1;j<arr.length;j++){
+//                if (arr[j]>arr[i]){
+//                    count++;
+//                }else {
+//                    break;
+//                }
+//            }
+//            max = Math.max(count*arr[i], max);
+//        }
+//         return max;
+//    }
 
-    public static int histogram(int[] arr){
 
-         int max = Integer.MIN_VALUE;
-         int[] newArr = new int[arr.length];
+    // using stack ...
+    public static int histogramStack(int[] arr){
+
+        int[] leftArr = new int[arr.length];
+        int[] rightArr = new int[arr.length];
+
+        Stack<Integer> stack = new Stack<>();
+        int max = 0;
+
+        // left array...
+        for (int i = 0; i < arr.length; i++) {
+            leftArr[i] = 1;
+            while (!stack.empty() && arr[stack.peek()]>=arr[i]){
+                stack.pop();
+                if (stack.empty()) {
+                    leftArr[i] = i+1;
+                }else {
+                    leftArr[i] = i-stack.peek();
+                }
+            }
+            stack.push(i);
+        }
+
+        // clean stack....
+        while (!stack.empty()){
+            stack.pop();
+        }
+
+        // right array...
+        for (int i = arr.length-1; i >=0; i--) {
+
+            rightArr[i] = 1;
+
+            while (!stack.empty() && arr[stack.peek()]>=arr[i]){
+
+                stack.pop();
+                if (stack.empty()){
+                    rightArr[i]++;
+                }else {
+                    rightArr[i] = i-stack.peek();
+                }
+            }
+            stack.push(i);
+        }
 
         for (int i = 0; i < arr.length; i++) {
-            int count = 1;
-            for (int j = i-1; j >=0 ; j--) {
+            arr[i] = (rightArr[i] + leftArr[i] -1)*arr[i];
 
-                if (arr[j]>arr[i]){
-                    count++;
-                }else {
-                    break;
-                }
-            }
-
-            for (int j = i+1;j<arr.length;j++){
-                if (arr[j]>arr[i]){
-                    count++;
-                }else {
-                    break;
-                }
-            }
-            newArr[i] = count*arr[i];
-        }
-
-        for (int j : newArr) {
-            if (j > max) {
-                max = j;
+            if (arr[i]>max){
+                max = arr[i];
             }
         }
-         return max;
+
+        return max;
     }
 }
