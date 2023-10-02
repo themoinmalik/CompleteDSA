@@ -45,6 +45,7 @@ public class Histogram {
         int[] leftArr = new int[arr.length];
         int[] rightArr = new int[arr.length];
 
+        int n = arr.length;
         Stack<Integer> stack = new Stack<>();
         int max = 0;
 
@@ -68,18 +69,16 @@ public class Histogram {
         }
 
         // right array...
-        for (int i = arr.length-1; i >=0; i--) {
+        for (int i = n-1; i >=0 ; i--) {
 
             rightArr[i] = 1;
-
             while (!stack.empty() && arr[stack.peek()]>=arr[i]){
-
                 stack.pop();
-                if (stack.empty()){
-                    rightArr[i]++;
-                }else {
-                    rightArr[i] = i-stack.peek();
-                }
+            }
+            if (stack.empty()){
+                rightArr[i] = n-i;
+            }else {
+                rightArr[i] = stack.peek()-i;
             }
             stack.push(i);
         }
