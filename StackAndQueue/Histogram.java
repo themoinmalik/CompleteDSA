@@ -54,11 +54,11 @@ public class Histogram {
             leftArr[i] = 1;
             while (!stack.empty() && arr[stack.peek()]>=arr[i]){
                 stack.pop();
-                if (stack.empty()) {
-                    leftArr[i] = i+1;
-                }else {
-                    leftArr[i] = i-stack.peek();
-                }
+            }
+            if (stack.empty()) {
+                leftArr[i] = i+1;
+            }else {
+                leftArr[i] = i-stack.peek();
             }
             stack.push(i);
         }
@@ -69,6 +69,20 @@ public class Histogram {
         }
 
         // right array...
+        findCount(arr, rightArr, n, stack);
+
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = (rightArr[i] + leftArr[i] -1)*arr[i];
+
+            if (arr[i]>max){
+                max = arr[i];
+            }
+        }
+
+        return max;
+    }
+
+    static void findCount(int[] arr, int[] rightArr, int n, Stack<Integer> stack) {
         for (int i = n-1; i >=0 ; i--) {
 
             rightArr[i] = 1;
@@ -82,15 +96,5 @@ public class Histogram {
             }
             stack.push(i);
         }
-
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = (rightArr[i] + leftArr[i] -1)*arr[i];
-
-            if (arr[i]>max){
-                max = arr[i];
-            }
-        }
-
-        return max;
     }
 }
