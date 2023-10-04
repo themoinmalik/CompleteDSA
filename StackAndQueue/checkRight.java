@@ -18,19 +18,7 @@ public class checkRight {
         int[] newArr = new int[n];
         Stack<Integer> stack = new Stack<>();
 
-        for (int i = n-1; i >=0 ; i--) {
-
-            newArr[i] = 1;
-            while (!stack.empty() && arr[stack.peek()]>=arr[i]){
-                stack.pop();
-            }
-            if (stack.empty()){
-                newArr[i] = n-i;
-            }else {
-                newArr[i] = stack.peek()-i;
-            }
-            stack.push(i);
-        }
+        Histogram.findCount(arr, newArr, n, stack);
         return newArr;
     }
 }
