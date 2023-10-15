@@ -12,6 +12,12 @@ public class FindTarget {
         boolean ans = target(arr, i, e);
         System.out.println(ans);
 
+
+        //
+        int n = 6;
+        int fi = fib(n);
+        System.out.println(fi);
+
     }
 
 
@@ -26,6 +32,17 @@ public class FindTarget {
         }
 
         return target(arr,i+1,e);
+
+    }
+
+
+    public static int fib(int n ){
+
+        if (n<=1){
+            return n;
+//            System.out.println("print hello");
+        }
+        return fib(n-1) + fib(n-2);
 
     }
 }
