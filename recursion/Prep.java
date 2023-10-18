@@ -15,6 +15,9 @@ public class Prep {
         int[] arr = new int[]{3,5,7,9,14,21};
         boolean ans1 = binarySearch(arr,3);
         System.out.println(ans1);
+        int i = 0;
+        int len1 = lenArr(arr,i);
+        System.out.println(len1);
 
     }
 
@@ -121,6 +124,16 @@ public class Prep {
         }
 
         return false;
+
+    }
+
+    // len of an array ...
+    public static int lenArr(int[] arr, int i){
+
+        if (i==arr.length){
+            return 0;
+        }
+        return 1+lenArr(arr,i+1);
 
     }
 }
