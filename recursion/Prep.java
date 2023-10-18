@@ -8,9 +8,13 @@ public class Prep {
 //        int ans = fact(5);
 //        int ans = sumOfDigit(123);
         int ans = recur(9);
-        System.out.println(ans);
+//        System.out.println(ans);
 
-        multi(24,5);
+//        printMulti(24,5);
+
+        int[] arr = new int[]{3,5,2,4,7,21};
+        boolean ans1 = binarySearch(arr,3);
+        System.out.println(ans1);
 
     }
 
@@ -79,14 +83,44 @@ public class Prep {
 
     // find multiple...
 
-    public static void multi(int n , int k){
 
-        if (k==1){
+    public static void printMulti(int n, int k){
+
+        if (k == 1){
             System.out.println(n);
             return;
         }
-        multi(n,k-1);
-        System.out.println(n * k);
+
+        printMulti(n,k-1);
+        System.out.println(n*k);
+
+    }
+
+
+    //binary search ...
+    public static boolean binarySearch(int[] arr, int k){
+
+
+        int left = 0;
+        int right = arr.length-1;
+
+        while (left<=right){
+
+            int mid = left - (left+right)/2;
+
+            if (arr[mid] == k){
+                return true;
+            }
+
+            if (arr[mid]>k){
+                left = mid+1;
+            }else {
+                right = mid-1;
+            }
+
+        }
+
+        return false;
 
     }
 }
