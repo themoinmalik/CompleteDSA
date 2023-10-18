@@ -12,7 +12,7 @@ public class Prep {
 
 //        printMulti(24,5);
 
-        int[] arr = new int[]{3,5,2,4,7,21};
+        int[] arr = new int[]{3,5,7,9,14,21};
         boolean ans1 = binarySearch(arr,3);
         System.out.println(ans1);
 
@@ -106,13 +106,13 @@ public class Prep {
 
         while (left<=right){
 
-            int mid = left - (left+right)/2;
+            int mid = (left+right)/2;
 
             if (arr[mid] == k){
                 return true;
             }
 
-            if (arr[mid]>k){
+            if (k>arr[mid]){
                 left = mid+1;
             }else {
                 right = mid-1;
