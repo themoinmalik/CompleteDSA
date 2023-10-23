@@ -54,14 +54,12 @@ public class Prep {
     // sum of digits ...
     public static int sumOfDigit(int n){
 
-
         // base condition...
 //        int sum = 0;
 //        if (n>0){
 //            int rem = n%10;
 //            n = n/10;
 //            sum = sumOfDigit(n)+rem;
-//
 //        }
 //        return sum;
 
@@ -74,7 +72,7 @@ public class Prep {
 
     }
 
-    // alternaet sum...
+    // alternate sum...
 
     public static int recur(int n){
 
