@@ -7,17 +7,24 @@ public class Prep {
 //        int ans = calFib(5);
 //        int ans = fact(5);
 //        int ans = sumOfDigit(123);
-        int ans = recur(9);
+//        int ans = recur(9);
 //        System.out.println(ans);
 
 //        printMulti(24,5);
 
-        int[] arr = new int[]{3,5,7,9,14,21};
-        boolean ans1 = binarySearch(arr,3);
-        System.out.println(ans1);
-        int i = 0;
-        int len1 = lenArr(arr,i);
-        System.out.println(len1);
+//        int[] arr = new int[]{3,5,7,9,14,21};
+//        boolean ans1 = binarySearch(arr,3);
+//        System.out.println(ans1);
+//        int i = 0;
+//        int len1 = lenArr(arr,i);
+//        System.out.println(len1);
+
+        boolean ans = powOf2(9);
+        System.out.println(ans);
+
+        int[] arr = new int[]{1,2,4,5,6};
+        reverse(arr,0);
+
 
     }
 
@@ -114,17 +121,13 @@ public class Prep {
             if (arr[mid] == k){
                 return true;
             }
-
             if (k>arr[mid]){
                 left = mid+1;
             }else {
                 right = mid-1;
             }
-
         }
-
         return false;
-
     }
 
     // len of an array ...
@@ -136,4 +139,30 @@ public class Prep {
         return 1+lenArr(arr,i+1);
 
     }
+    ////
+
+    public static boolean powOf2(int n){
+
+        if (n == 1){
+            return true;
+        }
+        if (n<=0 || n%2!=0){
+            return false;
+        }
+        return powOf2(n/2);
+    }
+
+    public static void reverse(int[] arr, int i){
+
+        if(i>=arr.length-1){
+            return;
+        }
+        System.out.println(arr[i]);
+        reverse(arr,i+1);
+        //  memoization....
+//        System.out.println(arr[i]);
+
+
+    }
+
 }
