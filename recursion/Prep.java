@@ -19,12 +19,14 @@ public class Prep {
 //        int len1 = lenArr(arr,i);
 //        System.out.println(len1);
 
-        boolean ans = powOf2(9);
-        System.out.println(ans);
+//        boolean ans = powOf2(9);
+//        System.out.println(ans);
 
         int[] arr = new int[]{1,2,4,5,6};
-        reverse(arr,0);
+//        reverse(arr,0);
 
+        int n = 3;
+        printTree(n);
 
     }
 
@@ -137,7 +139,7 @@ public class Prep {
         return 1+lenArr(arr,i+1);
 
     }
-    ////
+    //
 
     public static boolean powOf2(int n){
 
@@ -159,6 +161,40 @@ public class Prep {
         reverse(arr,i+1);
         //  memoization....
 //        System.out.println(arr[i]);
+
+
+    }
+
+    // Tree recursion...
+
+    public static void printTree(int n){
+
+        if (n>0){
+            System.out.println(n);
+            printTree(n-1);
+            printTree(n-1);
+        }
+
+    }
+
+
+    // indirect recursion...
+
+    public static void funA(int n){
+
+        if (n>0){
+            System.out.println(n);
+            funB(n-1);
+        }
+
+    }
+
+    public static void funB(int n){
+
+        if (n>0){
+            System.out.println(n);
+            funA(n/2);
+        }
 
 
     }
