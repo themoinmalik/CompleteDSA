@@ -1,4 +1,4 @@
-package src.recursion;
+package src.recursion_backtracking;
 
 public class ArrayIsSorted {
 

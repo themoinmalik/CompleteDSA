@@ -1,4 +1,4 @@
-package src.recursion;
+package src.recursion_backtracking;
 
 public class Prep {
 
@@ -196,6 +196,20 @@ public class Prep {
             funA(n/2);
         }
 
+
+    }
+
+
+    // mean of an array....
+
+    public static int func(int[] arr, int n){
+
+        if (n<0){
+            return arr[n];
+        }
+
+        int sum = sum + arr[n];
+        func(arr,n-1);
 
     }
 

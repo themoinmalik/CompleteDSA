@@ -1,6 +1,4 @@
-package src.recursion;
-
-import javax.xml.namespace.QName;
+package src.recursion_backtracking;
 
 public class GCD {
 
