@@ -202,15 +202,17 @@ public class Prep {
 
     // mean of an array....
 
-    public static int func(int[] arr, int n){
-
-        if (n<0){
-            return arr[n];
-        }
-
-        int sum = sum + arr[n];
-        func(arr,n-1);
-
-    }
+//    public static int func(int[] arr, int n){
+//
+//        if (n<0){
+//            return arr[n];
+//        }
+//
+//        int sum = sum + arr[n];
+//        func(arr,n-1);
+//
+//        return 7;
+//
+//    }
 
 }

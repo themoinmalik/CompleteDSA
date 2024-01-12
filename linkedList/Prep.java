@@ -30,25 +30,29 @@ public class Prep {
         // System.out.println(ans);
         // int ans1 = list.lenNodeRec(list.head);
         // System.out.println(ans1);
-        // remove elment....
+        // remove element....
         System.out.println("remove.... ");
-        // Node node = list.removeElement(list.head, 6);
-        // list.display(node);
-        // duiplicates... 
+         Node node = list.removeElement(list.head, 6);
+         list.display(node);
+        System.out.println("removed done");
+        // duplicates...
         // Node ans1 = list.removeDuplicates(list.head);
         // list.display(ans1);
 
-        Node ans = list.mergeNode(list1, list2);
-        list.display(ans);
-        //
+//        Node ans = list.mergeNode(list1, list2);
+//        list.display(ans);
 
         // happy
-        int ans1 = list.sumSqr(19);
-        System.out.println("ans-> " + ans1);
+//        int ans1 = list.sumSqr(19);
+//        System.out.println("ans-> " + ans1);
 
         // happy calling...
-        boolean ans2 = list.happyNum(19);
-        System.out.println("ans 2-> " + ans2);
+//        boolean ans2 = list.happyNum(19);
+//        System.out.println("ans 2-> " + ans2);
+
+        // remove
+//        Node rem = list.removeEl(list.head, 3);
+//        list.display(rem);
 
 
     }
@@ -399,6 +403,23 @@ class List {
         }
 
         return dummyHead.next;
+
+    }
+
+    // remove element from
+    public Node removeEl(Node head, int x){
+
+        Node temp = head;
+
+        while (temp!=null && temp.next!=null){
+
+            if (temp.next.data==x){
+                temp.next = temp.next.next;
+            }else {
+                temp = temp.next;
+            }
+        }
+        return temp;
 
     }
 
