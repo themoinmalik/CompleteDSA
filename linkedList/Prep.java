@@ -423,4 +423,137 @@ class List {
 
     }
 
+
+    // reverse from k group...
+    public static ListNode reverseKGroup(ListNode head, int k){
+
+        if (head == null){
+            return head;
+        }
+
+        // check length of LL
+        int len = 0;
+        ListNode lenNode = head;
+        while (lenNode != null){
+            len++;
+            lenNode = lenNode.next;
+        }
+
+        //
+
+        if (len < k){
+            return head;
+        }
+
+        // reverse..
+
+        ListNode curr = head;
+        ListNode prev = null;
+        ListNode temp = null;
+        int newk = 1;
+
+        while (newk <=k && curr!=null){
+
+            temp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = temp;
+            newk++;
+        }
+
+        head.next = reverseKGroup(temp, k);
+
+
+        return prev;
+
+    }
+
+
+    /// palindrom...
+
+
+    public static boolean isPalindrom(ListNode head){
+
+
+        // find the middle..
+
+
+        ListNode middle = middle(head);
+
+        // reverse middle to null.
+        ListNode reverse = reverse(middle);
+
+        ListNode first = head;
+        ListNode second = reverse;
+
+
+        while (first!=middle && second !=null){
+
+            if (first!=second){
+                return false;
+            }
+            first = first.next;
+            second = second.next;
+
+        }
+
+        return true;
+
+    }
+
+    // find middle
+    public static ListNode middle(ListNode head){
+
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while (fast!=null && fast.next !=null){
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if (slow == fast){
+                return slow;
+            }
+        }
+        return head;
+    }
+
+    public static ListNode reverse(ListNode head){
+
+        ListNode temp = null;
+        ListNode curr = head;
+        ListNode prev = null;
+
+        while (curr!=null){
+            temp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = temp;
+        }
+        return prev;
+    }
+
+
+    // find cycle and intesecrtion node ...
+    public static ListNode findCycle(ListNode head){
+
+        ListNode s = head;
+        ListNode f = head;
+        ListNode e = head;
+
+        while (f!=null && f.next !=null ){
+
+            s = s.next;
+            f = f.next.next;
+
+            if (s==f){
+                while (e!=s){
+                    s = s.next;
+                    e = e.next;
+                }
+                return s;
+            }
+        }
+        return null;
+    }
 }
