@@ -11,9 +11,7 @@ public class Day3LinkedList {
 
 
     public static ListNode mergeSortedLL(ListNode l1, ListNode l2){
-
         return l1;
-
     }
 
     // remove nth node..
