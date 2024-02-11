@@ -123,7 +123,7 @@ public class ArraysDay4 {
             k++;
         }
 
-        // copy rest elenment of L and R
+        // copy rest element of L and R
 
         while (i<n1){
             arr[k]=L[i];
