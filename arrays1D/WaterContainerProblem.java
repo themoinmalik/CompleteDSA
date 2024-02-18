@@ -4,7 +4,7 @@ public class WaterContainerProblem {
 
     public static void main(String[] args) {
 
-        int[] arr = new int[]{21,5,7,54,21,12,12};
+        int[] arr = new int[]{4,2,0,3,2,5};
         int maxArea = waterProblem(arr);
         System.out.println(maxArea);
     }
