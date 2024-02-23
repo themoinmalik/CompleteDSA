@@ -22,7 +22,7 @@ public class Prep {
 //        boolean ans = powOf2(9);
 //        System.out.println(ans);
 
-        int[] arr = new int[]{1,2,4,5,6};
+        int[] arr = new int[]{1, 2, 4, 5, 6};
 //        reverse(arr,0);
 
         int n = 3;
@@ -30,31 +30,25 @@ public class Prep {
 
     }
 
-    public static int calFib(int n){
-
+    public static int calFib(int n) {
         // base condition...
-        if (n <=2){
+        if (n <= 2) {
             return 1;
         }
-
-        return calFib(n-1) + calFib(n-2);
-
+        return calFib(n - 1) + calFib(n - 2);
     }
 
 
-    public static int fact(int n){
-
+    public static int fact(int n) {
         /// base condition ...
-        if (n<=2){
+        if (n <= 2) {
             return n;
         }
-
-        return n*fact(n-1);
-
+        return n * fact(n - 1);
     }
 
     // sum of digits ...
-    public static int sumOfDigit(int n){
+    public static int sumOfDigit(int n) {
 
         // base condition...
 //        int sum = 0;
@@ -66,153 +60,131 @@ public class Prep {
 //        return sum;
 
         // base condition more optimized...
-        if (n == 0){
+        if (n == 0) {
             return 0;
         }
-        int rem = n%10;
-        return rem+sumOfDigit(n/10);
+        int rem = n % 10;
+        return rem + sumOfDigit(n / 10);
 
     }
 
     // alternate sum...
-
-    public static int recur(int n){
+    public static int recur(int n) {
 
         // base condition...
-        if (n==0){
+        if (n == 0) {
             return 0;
         }
-
-        if (n%2 == 0){
+        if (n % 2 == 0) {
             return recur(n - 1) - n;
-        }else {
-            return recur(n-1)+n;
+        } else {
+            return recur(n - 1) + n;
         }
-
     }
 
     // find multiple...
+    public static void printMulti(int n, int k) {
 
-
-    public static void printMulti(int n, int k){
-
-        if (k == 1){
+        if (k == 1) {
             System.out.println(n);
             return;
         }
-
-        printMulti(n,k-1);
-        System.out.println(n*k);
+        printMulti(n, k - 1);
+        System.out.println(n * k);
 
     }
 
 
     //binary search ...
-    public static boolean binarySearch(int[] arr, int k){
-
+    public static boolean binarySearch(int[] arr, int k) {
 
         int left = 0;
-        int right = arr.length-1;
+        int right = arr.length - 1;
 
-        while (left<=right){
+        while (left <= right) {
 
-            int mid = (left+right)/2;
+            int mid = (left + right) / 2;
 
-            if (arr[mid] == k){
+            if (arr[mid] == k) {
                 return true;
             }
-            if (k>arr[mid]){
-                left = mid+1;
-            }else {
-                right = mid-1;
+            if (k > arr[mid]) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
             }
         }
         return false;
     }
 
     // len of an array ...
-    public static int lenArr(int[] arr, int i){
+    public static int lenArr(int[] arr, int i) {
 
-        if (i==arr.length){
+        if (i == arr.length) {
             return 0;
         }
-        return 1+lenArr(arr,i+1);
+        return 1 + lenArr(arr, i + 1);
 
     }
     //
 
-    public static boolean powOf2(int n){
+    public static boolean powOf2(int n) {
 
-        if (n == 1){
+        if (n == 1) {
             return true;
         }
-        if (n<=0 || n%2!=0){
+        if (n <= 0 || n % 2 != 0) {
             return false;
         }
-        return powOf2(n/2);
+        return powOf2(n / 2);
     }
 
-    public static void reverse(int[] arr, int i){
+    public static void reverse(int[] arr, int i) {
 
-        if(i>=arr.length-1){
+        if (i >= arr.length - 1) {
             return;
         }
         System.out.println(arr[i]);
-        reverse(arr,i+1);
+        reverse(arr, i + 1);
         //  memoization....
 //        System.out.println(arr[i]);
-
-
     }
 
     // Tree recursion...
 
-    public static void printTree(int n){
-
-        if (n>0){
+    public static void printTree(int n) {
+        if (n > 0) {
             System.out.println(n);
-            printTree(n-1);
-            printTree(n-1);
+            printTree(n - 1);
+            printTree(n - 1);
         }
-
     }
 
 
     // indirect recursion...
-
-    public static void funA(int n){
-
-        if (n>0){
+    public static void funA(int n) {
+        if (n > 0) {
             System.out.println(n);
-            funB(n-1);
+            funB(n - 1);
         }
-
     }
 
-    public static void funB(int n){
-
-        if (n>0){
+    public static void funB(int n) {
+        if (n > 0) {
             System.out.println(n);
-            funA(n/2);
+            funA(n / 2);
         }
-
-
     }
 
 
     // mean of an array....
-
 //    public static int func(int[] arr, int n){
-//
 //        if (n<0){
 //            return arr[n];
 //        }
-//
 //        int sum = sum + arr[n];
 //        func(arr,n-1);
-//
 //        return 7;
-//
 //    }
 
 }

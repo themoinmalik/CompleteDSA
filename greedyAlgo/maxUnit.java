@@ -17,14 +17,14 @@ public class maxUnit {
 
         Arrays.sort(arr, (x,y) -> y[1]-x[1]);
 
-        for (int i = 0; i < n; i++) {
+        for (int[] e : arr) {
 
-            int q = arr[i][0];
-            q = Math.min(q,t);
-            ans = ans+arr[i][1]*q;
-            t = t-q;
+            int q = e[0];
+            q = Math.min(q, t);
+            ans = ans + e[1] * q;
+            t = t - q;
 
-            if (t==0){
+            if (t == 0) {
                 break;
             }
 
