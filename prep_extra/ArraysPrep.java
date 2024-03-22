@@ -1,6 +1,8 @@
 package src.prep_extra;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class ArraysPrep {
 
@@ -14,6 +16,12 @@ public class ArraysPrep {
 //        int[] ans1 = reverseArr(arr);
 //        System.out.println(Arrays.toString(ans1));
 
+        List<Integer> list = Arrays.asList(24,1,4,3,1,3,14);
+        List<Integer> ans = List.of(13,2,4,1,0,3,45);
+
+        List<List<Integer>> anr = List.of(list,ans);
+
+        System.out.println(anr.get(0));
 
         int a = 10;
         int b = 10;

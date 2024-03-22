@@ -5,6 +5,12 @@ import java.util.List;
 
 public class Partitioning {
 
+    public static void main(String[] args) {
+
+        int[] arr = new int[]{2,4,1,34};
+
+    }
+
 
     public List<List<String>> partition(String s){
 

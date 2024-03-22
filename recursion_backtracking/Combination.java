@@ -34,7 +34,7 @@ class Combination {
             path.add(candidates[i]);
             combinationSum(candidates, target, result, path, sum, i+1);
             // backtracking
-//            sum -= candidates[i];
+            sum -= candidates[i];
             path.remove(path.size() - 1);
         }
 
