@@ -9,13 +9,16 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int[] arr = new int[]{6,5,3,2,8,10,9};
+        int[] arr = new int[]{1,1,1,2,2,3};
+        Arrays.sort(arr);
 
 //        int[] ans =  KsortedArray.KsortedArraymethod(arr, 3);
 
         List<Integer> ans = KClosestNo.findClosestElements(arr,3,4);
 
-        System.out.println(ans);
+        int[] kfrequent = Kfrequent.kelements(arr, 2 );
+
+        System.out.println(Arrays.toString(kfrequent));
 
     }
 }
