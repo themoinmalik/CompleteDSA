@@ -6,7 +6,7 @@ public class ValidParenthesis {
 
     public static void main(String[] args) {
 
-        boolean ans = checkParenthesis("()[");
+        boolean ans = checkParenthesis("()[]");
         System.out.println(ans);
 
     }

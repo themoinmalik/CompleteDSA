@@ -22,16 +22,15 @@ public class NGL {
 
             newArr[i] = -1;
 
-            while (!stack.empty()){
-                int top = stack.peek();
-                if (top>arr[i]){
-                    newArr[i] = top;
-                    break;
-                }else {
-                    stack.pop();
-                }
+            while (!stack.empty() && arr[stack.peek()]<arr[i]){
+                stack.pop();
             }
-            stack.push(arr[i]);
+            if (stack.empty()){
+                newArr[i] = i+1;
+            }else {
+                newArr[i] = i;
+            }
+            stack.push(i);
         }
 
         return newArr;

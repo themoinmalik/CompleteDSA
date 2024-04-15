@@ -7,6 +7,8 @@ public class EmployeeComparable implements Comparable<EmployeeComparable>{
 
     private String name;
 
+    private int rating;
+
     public EmployeeComparable(int rollno, String name){
         this.rollno = rollno;
         this.name = name;
@@ -16,11 +18,14 @@ public class EmployeeComparable implements Comparable<EmployeeComparable>{
         return this.name;
     }
 
+    public int getRating(){
+        return this.rating;
+    }
+
 
     @Override
     public int compareTo(EmployeeComparable o){
         return this.rollno - o.rollno;
-
     }
 
     @Override
