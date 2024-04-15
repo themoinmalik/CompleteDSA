@@ -69,10 +69,11 @@
 //            ListNode curr = head;
 //            ListNode prev = null;
 //
-//            while (curr->next!=null){
-//                temp = curr;
-//                curr = curr->next;
-//                prev = temp->next;
+//            while (curr.next!=null){
+//                temp = curr.next;
+//                prev = curr;
+//                curr.next = prev;
+//                curr = temp;
 //            }
 //
 //            return prev;

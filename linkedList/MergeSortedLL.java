@@ -9,6 +9,10 @@ class ListNode {
     public ListNode(int data) {
         this.data = data;
     }
+
+    public ListNode(){
+
+    }
 }
 
 
@@ -52,6 +56,18 @@ public class MergeSortedLL {
 
     }
 
+
+    public ListNode insertNode(int data){
+
+        ListNode listNode   = new ListNode();
+        while (listNode.next!=null){
+            listNode = listNode.next;
+        }
+        listNode.next = new ListNode(data);
+
+        return listNode;
+    }
+
     public static void main(String[] args) {
 
         ListNode l1 = new ListNode(1);
@@ -70,6 +86,11 @@ public class MergeSortedLL {
             result = result.next;
         }
         System.out.println("END");
+
+        mergeSortedLL.insertNode(7);
+
+        System.out.println("END");
+
 
     }
 
