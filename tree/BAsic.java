@@ -12,19 +12,12 @@ public class BAsic {
     }
 
     public int heigth(TreeNode root){
-
         return 0;
-
     }
 
-
     /// check symmetric...
-
     public boolean isSymmetric(TreeNode root){
-
         return check(root, root);
-
-
     }
 
     public boolean check(TreeNode left, TreeNode right){
