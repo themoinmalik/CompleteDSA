@@ -17,14 +17,18 @@ public class CallingAll {
         List<Integer> res = new ArrayList<>();
 
         Traversal traversal = new Traversal();
-        List<Integer> inorderTrav = traversal.inorderTrav(tree);
-        List<Integer> preorder = traversal.preOrder(tree);
-        List<Integer> postOrder = traversal.postorder(tree);
+//        List<Integer> inorderTrav = traversal.inorderTrav(tree);
+//        List<Integer> preorder = traversal.preOrder(tree);
+//        List<Integer> postOrder = traversal.postorder(tree);
 
 //        System.out.println(postOrder);
 
-        int h = traversal.hight(tree);
-        System.out.println(h);
+//        int h = traversal.hight(tree);
+//        System.out.println(h);
+
+
+        List<Integer> left = DFS.leftStack(tree);
+        System.out.println(left);
 
     }
 
