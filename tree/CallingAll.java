@@ -8,14 +8,17 @@ public class CallingAll {
 
     public static void main(String[] args) {
 
-        TreeNode tree = new TreeNode(1);
-        tree.left = new TreeNode(2);
-        tree.right = new TreeNode(3);
+        TreeNode tree = new TreeNode(5);
+        tree.left = new TreeNode(4);
+        tree.right = new TreeNode(6);
+        tree.left.left = new TreeNode(null);
+        tree.right.right = new TreeNode(null);
+        tree.left.left.left = new TreeNode(3);
+        tree.right.right.right = new TreeNode(7);
 
-        tree.left.left = new TreeNode(5);
+
 
         List<Integer> res = new ArrayList<>();
-
         Traversal traversal = new Traversal();
 //        List<Integer> inorderTrav = traversal.inorderTrav(tree);
 //        List<Integer> preorder = traversal.preOrder(tree);
@@ -23,12 +26,16 @@ public class CallingAll {
 
 //        System.out.println(postOrder);
 
-//        int h = traversal.hight(tree);
+//        int h = traversal.height(tree);
 //        System.out.println(h);
 
 
-        List<Integer> left = DFS.leftStack(tree);
-        System.out.println(left);
+//        List<Integer> left = DFS.leftStack(tree);
+//        System.out.println(left);
+
+        //
+        System.out.println(BFS.levelOrder(tree));
+        System.out.println(IsBST.isValidBST(tree));
 
     }
 
