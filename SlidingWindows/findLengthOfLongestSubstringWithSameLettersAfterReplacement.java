@@ -2,12 +2,13 @@ package src.SlidingWindows;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 public class findLengthOfLongestSubstringWithSameLettersAfterReplacement {
 
     public static void main(String[] args) {
 
-        String str = "moinmalikhh";
+        String str = "abcababb";
         int k = 2;
 
         int ans = checkLongestSubString(str, k);
@@ -16,38 +17,36 @@ public class findLengthOfLongestSubstringWithSameLettersAfterReplacement {
 
     private static int checkLongestSubString(String str, int k) {
 
+
+        Integer i =0;
         Map<Character, Integer> map = new HashMap<>();
-        int j = 0;
-        int i = 0;
-        int n = str.length();
-        int maxLen = Integer.MIN_VALUE;
+        int ans = Integer.MIN_VALUE;
 
-        for (j = 0; j < n; j++) {
+        for (Integer j = 0; j < str.length(); j++) {
             char c = str.charAt(j);
-            map.put(c, map.getOrDefault(c, 0) + 1);
+            map.put(c, map.getOrDefault(c, 0)+1);
 
-            int maxRepeatLetter = maxRapeatLetter(map);
+            // find tyhe max coutn character...
+            Optional<Integer> maxcount = map.values().stream().max(Integer::compareTo);
 
-            if (j - i + 1 - maxRepeatLetter > k) {
-                while (j - i + 1 - maxRepeatLetter > k) {
-                    char leftChar = str.charAt(i);
-                    map.put(leftChar, map.get(leftChar) - 1);
-                    i++;
-                }
+            while (j-i+1 - maxcount.get() >k){
+
+                char ch = str.charAt(i);
+                map.put(ch, map.get(ch)-1);
+                i++;
             }
-            maxLen = Math.max(maxLen, j - i + 1);
+
+            if (j-i+1 - maxcount.get() == k){
+                ans = Math.max(ans, j-i+1);
+            }
+
         }
-        return maxLen;
+
+
+       return ans;
+
+
     }
 
-    private static int maxRapeatLetter(Map<Character, Integer> map) {
 
-        int maxCount = 0;
-        for (int count : map.values()) {
-            if (maxCount < count) {
-                maxCount = count;
-            }
-        }
-        return maxCount;
-    }
 }
