@@ -1,58 +1,48 @@
-package src.tree;
-
-import java.util.*;
-
-public class BFS {
-
-
-    // level order
-
-    // find the right-hand tree leafs.
-
-
-    public static List<Integer> levelOrder(TreeNode root){
-
-        List<Integer> result = new ArrayList<>();
-        int count= 0;
-
-
-        if (root == null)
-            return null;
-
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
-//        result.add(root.val);
-        while (queue.size()>0){
-
-            root = queue.poll();
-
-            while (count == 0){
-                count--;
-            }
-            result.add(root.val);
-
-            if (root.left != null){
-                queue.add(root.left);
-                count++;
-            }
-            if (root.right != null){
-                queue.add(root.right);
-                count++;
-            }
-
-        }
-        return result;
-
-
-    }
-
-
-    public TreeNode leftView(TreeNode root){
-
-        Queue<TreeNode> queue = new PriorityQueue<>();
-        return null;
-
-    }
-
-
-}
+//package src.tree;
+//
+//import java.util.*;
+//
+//public class BFS {
+//
+//
+//    // level order
+//
+//    // find the right-hand tree leafs.
+//
+//
+//    public static List<Integer> levelOrder(TreeNode root){
+//
+//    List<Integer> list = new ArrayList<>();
+//    Queue<TreeNode> queue = new LinkedList<>();
+//    queue.add(root);
+//
+//    while (!queue.isEmpty()){
+//
+//        int num = queue.size();
+//        for (int i = 0; i < num; i++) {
+//
+//            TreeNode node = queue.poll();
+//            if(i==num-1){
+//                list.add(node.val);
+//            }
+//            if(node.left!=null){
+//                queue.add(node.left);
+//            }
+//            if(node.right!=null){
+//                queue.add(node.right);
+//            }
+//        }
+//        return list;
+//    }
+//
+//
+////
+////    public TreeNode leftView(TreeNode root){
+////
+////        Queue<TreeNode> queue = new PriorityQueue<>();
+////        return null;
+////
+////    }
+//
+//
+//}}

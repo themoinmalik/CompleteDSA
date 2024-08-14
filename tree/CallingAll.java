@@ -34,7 +34,7 @@ public class CallingAll {
 //        System.out.println(left);
 
         //
-        System.out.println(BFS.levelOrder(tree));
+//        System.out.println(BFS.levelOrder(tree));
         System.out.println(IsBST.isValidBST(tree));
 
     }

@@ -178,27 +178,34 @@ class Main {
 
     public static void main(String[] args) {
 
-        Test test = new Test();
 
-        test.insertFirst(10);
-        test.insertFirst(20);
-        test.insertFirst(30);
-        test.display();
-        test.nthNode(2);
-        test.insertAfterNode(20, 50);
-        test.display();
-        boolean ans1 = test.searchElement(10);
-        System.out.println(ans1);
-        boolean ans  = test.searchElement(90);
-        System.out.println(ans);
-        test.sizeLL();
-        test.sizeLL();
-//        test.reverseLL();
-        test.display();
-        test.deleteNode(20);
-        test.display();
-        test.nthNode(3);
-        test.nthFromLast(2);
+//        String name = "Moin malik ";
+//        System.out.println(name.substring(1));
+
+        String n = "6B.1";
+        System.out.println(n.substring(1));
+
+//        Test test = new Test();
+//
+//        test.insertFirst(10);
+//        test.insertFirst(20);
+//        test.insertFirst(30);
+//        test.display();
+//        test.nthNode(2);
+//        test.insertAfterNode(20, 50);
+//        test.display();
+//        boolean ans1 = test.searchElement(10);
+//        System.out.println(ans1);
+//        boolean ans  = test.searchElement(90);
+//        System.out.println(ans);
+//        test.sizeLL();
+//        test.sizeLL();
+////        test.reverseLL();
+//        test.display();
+//        test.deleteNode(20);
+//        test.display();
+//        test.nthNode(3);
+//        test.nthFromLast(2);
 
     }
 }

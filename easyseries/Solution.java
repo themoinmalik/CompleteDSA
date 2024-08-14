@@ -3,6 +3,8 @@ package src.easyseries;
 import java.util.HashMap;
 import java.util.Map;
 
+//import static jdk.vm.ci.code.CodeUtil.isOdd;
+
 class Solution {
 
 
@@ -15,6 +17,9 @@ class Solution {
 //        System.out.println(ans);
 
         String st= "6777189990";
+
+        System.out.println(st.substring(0,3));
+
         Map<Character, Integer> map = new HashMap<>();
 
         for (char c: st.toCharArray()){
@@ -36,6 +41,17 @@ class Solution {
 //                .max;
 
         System.out.println(maxkey);
+
+        int n = st.length();
+
+        for (int i = n-1; i >=0 ; i--) {
+
+//            if ((st.charAt(i)-'0')){
+//                return ;
+//
+//            }
+
+        }
 
 
     }
