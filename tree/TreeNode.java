@@ -1,5 +1,7 @@
 package src.tree;
 
+import java.util.Objects;
+
 public class TreeNode {
 
     int val ;
@@ -17,5 +19,9 @@ public class TreeNode {
 
     public TreeNode(int data) {
         this.val = data;
+    }
+
+    public TreeNode(String o) {
+
     }
 }
