@@ -1,24 +1,29 @@
 package src.heap;
 
-import java.util.Comparator;
+import java.util.Arrays;
 import java.util.PriorityQueue;
 
 public class KsortedArray {
 
+
+    public static void main(String[] args) {
+
+        int[] nums = new int[]{2,4,1,4,1,5,78,9};
+        int k = 3;
+        int[] ans = KsortedArraymethod(nums, k);
+        System.out.println(Arrays.toString(ans));
+
+    }
+
     public static int[] KsortedArraymethod(int[] arr, int k) {
 
 
-        PriorityQueue<Integer> minheap = new PriorityQueue<>(10, new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                return o1 - o2;
-            }
-        });
+        PriorityQueue<Integer> minheap = new PriorityQueue<>((a,b) -> b - a);
 
         int inx = 0;
 
         for (int i = 0; i < arr.length; i++) {
-            minheap.add(arr[i]);
+            minheap.offer(arr[i]);
 
             if (minheap.size() > k) {
                 arr[inx++] = minheap.poll();
