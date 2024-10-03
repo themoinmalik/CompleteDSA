@@ -19,4 +19,5 @@ let newNum = num.filter((a) => {
 })
 
 console.log(newNum);
+// hkhjkjh
 
