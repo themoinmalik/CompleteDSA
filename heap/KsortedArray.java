@@ -17,7 +17,6 @@ public class KsortedArray {
 
     public static int[] KsortedArraymethod(int[] arr, int k) {
 
-
         PriorityQueue<Integer> minheap = new PriorityQueue<>((a,b) -> b - a);
 
         int inx = 0;

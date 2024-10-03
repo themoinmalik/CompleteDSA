@@ -5,7 +5,21 @@ import java.util.List;
 
 public class Traversal {
 
-    public List<Integer> inorderTrav(TreeNode root){
+
+    public static void main(String[] args) {
+
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
+        root.right.left = new TreeNode(6);
+
+        System.out.println(preOrder(root));
+
+    }
+
+    public static List<Integer> inorderTrav(TreeNode root){
 
         List<Integer> res = new ArrayList<>();
         generateRes(root, res);
@@ -13,7 +27,7 @@ public class Traversal {
 
     }
 
-    public void generateRes(TreeNode root, List<Integer> res){
+    public static void generateRes(TreeNode root, List<Integer> res){
 
         if (root == null) return;
 
@@ -24,7 +38,7 @@ public class Traversal {
     }
 
 
-    public List<Integer> preOrder(TreeNode root){
+    public static List<Integer> preOrder(TreeNode root){
 
         List<Integer> res = new ArrayList<>();
         generateResPre(root, res);
@@ -32,7 +46,7 @@ public class Traversal {
 
     }
 
-    public void generateResPre(TreeNode root, List<Integer> res){
+    public static void generateResPre(TreeNode root, List<Integer> res){
 
         if (root == null) return;
 

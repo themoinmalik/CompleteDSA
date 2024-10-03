@@ -12,11 +12,18 @@ public class GroupAnagrams {
         String str1 = String.valueOf(arr);
 
         Map<String, List<String>> map = new HashMap<>();
-        map.get(str).add(str1);
+//        map.get(str).add(str1);
 
         System.out.println(map);
-
         System.out.println(arr);
+
+        int a = 1;
+        int b =1;
+
+        int x = 128;
+        int y = 128;
+        System.out.println(a==b);
+        System.out.println(x==y);
 
     }
 
