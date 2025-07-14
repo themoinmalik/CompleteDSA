@@ -71,7 +71,7 @@ class BinaryTree {
 //
 //# Easy Level Binary Tree Interview Questions
 //
-//1. **Create a binary tree and print its elements in inorder traversal.**
+//        1. **Create a binary tree and print its elements in inorder traversal.**
 //        2. **Find the height of a binary tree.**
 //        3. **Count the number of nodes in a binary tree.**
 //        4. **Print all leaf nodes of a binary tree.**
@@ -80,6 +80,17 @@ class BinaryTree {
 //        7. **Insert a node in a binary tree (at the first available position).**
 //        8. **Print the sum of all nodes in a binary tree.**
 //        9. **Search for a given value in a binary tree.**
+
+//
+//public boolean search(Node node, int key) {
+//    if (node == null)
+//        return false;
+//    if (node.value == key)
+//        return true;
+//    // Search in left and right subtrees
+//    return search(node.left, key) || search(node.right, key);
+//}
+
 //        10. **Print the preorder and postorder traversal of a binary tree.**
 
 
