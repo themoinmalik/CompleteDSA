@@ -73,6 +73,25 @@ class BinaryTree {
 //
 //        1. **Create a binary tree and print its elements in inorder traversal.**
 //        2. **Find the height of a binary tree.**
+
+
+//public  int height(Node root){
+//
+//    // null check...
+//    if (root==null){
+//        return 0;
+//    }
+//
+//    int left = height(root.left);
+//    int right = height(root.right);
+//
+//    return Math.max(left, right) + 1;
+//
+//
+//}
+
+
+
 //        3. **Count the number of nodes in a binary tree.**
 //        4. **Print all leaf nodes of a binary tree.**
 //        5. **Find the maximum value in a binary tree.**
