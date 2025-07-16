@@ -93,9 +93,63 @@ class BinaryTree {
 
 
 //        3. **Count the number of nodes in a binary tree.**
+
+//int count(Node node){
+//
+//    if (node == null){
+//        return 0;
+//    }
+//    int left = count(node.left);
+//    int right = count(node.right);
+//
+//    return  left+right+1;
+//}
+
+
 //        4. **Print all leaf nodes of a binary tree.**
+
+void allLeaf(Node node){
+
+    if (node == null){
+        return;
+    }
+
+    if (node.left == null && node.right == null){
+        System.out.println(node.data);
+    }
+
+    allLeaf(node.left);
+    allLeaf(node.right);
+
+}
+
+
 //        5. **Find the maximum value in a binary tree.**
+
+int maxValue(Node node){
+
+    // null check..
+    if (node == null){
+        return Integer.MIN_VALUE;
+    }
+
+    int lmax = maxValue(node.left);
+    int rmax = maxValue(node.right);
+
+    return  Math.max(node.data, Math.max(lmax, rmax));
+
+}
+
+
 //        6. **Check if a binary tree is empty.**
+
+boolean isEmpty(Node node) {
+
+   return node == null
+
+}
+
+
 //        7. **Insert a node in a binary tree (at the first available position).**
 //        8. **Print the sum of all nodes in a binary tree.**
 //        9. **Search for a given value in a binary tree.**
