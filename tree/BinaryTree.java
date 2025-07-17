@@ -47,24 +47,12 @@ class BinaryTree {
     // - serialize(Node root)
     // - deserialize(String data)
 
-    // Example usage
-    public static void main(String[] args) {
-        BinaryTree tree = new BinaryTree();
-        tree.root = new Node(1);
-        tree.root.left = new Node(2);
-        tree.root.right = new Node(3);
-        tree.root.left.left = new Node(4);
-        tree.root.left.right = new Node(5);
 
-        System.out.print("Inorder: ");
-        tree.inorder(tree.root);
-        System.out.print("\nPreorder: ");
-        tree.preorder(tree.root);
-        System.out.print("\nPostorder: ");
-        tree.postorder(tree.root);
-    }
-}
 
+
+
+
+    ///  ---------------------
 
 
 //some question
@@ -108,51 +96,82 @@ class BinaryTree {
 
 //        4. **Print all leaf nodes of a binary tree.**
 
-void allLeaf(Node node){
+    void allLeaf(Node node){
 
-    if (node == null){
-        return;
+        if (node == null){
+            return;
+        }
+
+        if (node.left == null && node.right == null){
+            System.out.println(node.data);
+        }
+
+        allLeaf(node.left);
+        allLeaf(node.right);
+
     }
-
-    if (node.left == null && node.right == null){
-        System.out.println(node.data);
-    }
-
-    allLeaf(node.left);
-    allLeaf(node.right);
-
-}
 
 
 //        5. **Find the maximum value in a binary tree.**
 
-int maxValue(Node node){
+    int maxValue(Node node){
 
-    // null check..
-    if (node == null){
-        return Integer.MIN_VALUE;
+        // null check..
+        if (node == null){
+            return Integer.MIN_VALUE;
+        }
+
+        int lmax = maxValue(node.left);
+        int rmax = maxValue(node.right);
+
+        return  Math.max(node.data, Math.max(lmax, rmax));
+
     }
-
-    int lmax = maxValue(node.left);
-    int rmax = maxValue(node.right);
-
-    return  Math.max(node.data, Math.max(lmax, rmax));
-
-}
 
 
 //        6. **Check if a binary tree is empty.**
 
-boolean isEmpty(Node node) {
+    boolean isEmpty(Node node) {
 
-   return node == null
+        return node == null;
 
-}
+    }
 
 
 //        7. **Insert a node in a binary tree (at the first available position).**
 //        8. **Print the sum of all nodes in a binary tree.**
+
+    int sum(Node node){
+
+        if (node == null){
+            return 0;
+        }
+
+        return node.data + sum(node.left) + sum(node.right);
+    }
+
+
+
 //        9. **Search for a given value in a binary tree.**
+
+    boolean givenValue(Node node, int key){
+
+        if (node == null){
+            return false;
+        }
+
+        if (node.data == key){
+            return true;
+        }
+
+        boolean lans = givenValue(node.left, key);
+        boolean rans = givenValue(node.right, key);
+
+        return lans || rans;
+
+    }
+
+
 
 //
 //public boolean search(Node node, int key) {
@@ -210,3 +229,37 @@ boolean isEmpty(Node node) {
 //        15. **Find the largest BST subtree in a binary tree.**
 //
 //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // Example usage
+    public static void main(String[] args) {
+        BinaryTree tree = new BinaryTree();
+        tree.root = new Node(1);
+        tree.root.left = new Node(2);
+        tree.root.right = new Node(3);
+        tree.root.left.left = new Node(4);
+        tree.root.left.right = new Node(5);
+
+        System.out.print("Inorder: ");
+        tree.inorder(tree.root);
+        System.out.print("\nPreorder: ");
+        tree.preorder(tree.root);
+        System.out.print("\nPostorder: ");
+        tree.postorder(tree.root);
+    }
+}
+
