@@ -50,13 +50,6 @@ class BinaryTree {
 
 
 
-
-
-    ///  ---------------------
-
-
-//some question
-//
 //# Easy Level Binary Tree Interview Questions
 //
 //        1. **Create a binary tree and print its elements in inorder traversal.**
@@ -190,8 +183,20 @@ class BinaryTree {
 //
 //# Medium Level Binary Tree Interview Questions
 //
-//1. **Find the diameter (longest path between any two nodes) of a binary tree.**
+//        1. **Find the diameter (longest path between any two nodes) of a binary tree.**
+
+
+
+
+
+
+
+
 //        2. **Check if a binary tree is balanced (height-balanced).**
+
+
+
+
 //        3. **Print all root-to-leaf paths in a binary tree.**
 //        4. **Find the Lowest Common Ancestor (LCA) of two nodes in a binary tree.**
 //        5. **Mirror or invert a binary tree.**
