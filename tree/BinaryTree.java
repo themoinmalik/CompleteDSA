@@ -186,6 +186,29 @@ class BinaryTree {
 //        1. **Find the diameter (longest path between any two nodes) of a binary tree.**
 
 
+    int diameter(Node node){
+
+      int[] maxDia = new int[]{0};
+      calculateHeight(node, maxDia);
+      return maxDia[0];
+
+    }
+
+    int calculateHeight(Node node, int[] maxdia){
+
+        if (node == null){
+            return 0;
+        }
+
+        int leftH = calculateHeight(node.left, maxdia);
+        int rightH = calculateHeight(node.right, maxdia);
+
+        maxdia[0] = Math.max(maxdia[0], leftH+rightH+1);
+
+        return Math.max(leftH, rightH)+1;
+
+
+    }
 
 
 
