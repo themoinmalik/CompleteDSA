@@ -1,6 +1,4 @@
-package src.tree;
-
-import java.util.Objects;
+package src.Tree;
 
 public class TreeNode {
 

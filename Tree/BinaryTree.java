@@ -1,4 +1,4 @@
-package src.tree;
+package src.Tree;
 
 
 
@@ -213,8 +213,6 @@ class BinaryTree {
 
 
 
-
-
 //        2. **Check if a binary tree is balanced (height-balanced).**
 
 
@@ -257,20 +255,6 @@ class BinaryTree {
 //        15. **Find the largest BST subtree in a binary tree.**
 //
 //
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     // Example usage
