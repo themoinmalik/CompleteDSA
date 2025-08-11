@@ -1,4 +1,4 @@
-package src.tree;
+package src.Tree;
 
 public class LCA {
 

@@ -1,6 +1,4 @@
-package src.tree;
-
-import java.util.List;
+package src.Tree;
 
 public class RSV {
 
