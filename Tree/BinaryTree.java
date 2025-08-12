@@ -216,6 +216,16 @@ class BinaryTree {
 //        2. **Check if a binary tree is balanced (height-balanced).**
 
 
+    boolean balance(Node root){
+
+        if (root == null){
+            return false;
+        }
+
+        return true;
+
+    }
+
 
 
 //        3. **Print all root-to-leaf paths in a binary tree.**
