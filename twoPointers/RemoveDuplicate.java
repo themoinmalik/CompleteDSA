@@ -1,7 +1,5 @@
 package src.twoPointers;
 
-import java.util.Arrays;
-
 public class RemoveDuplicate {
 
     public static void main(String[] args) {
