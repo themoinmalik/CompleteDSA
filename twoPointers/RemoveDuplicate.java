@@ -15,7 +15,7 @@ public class RemoveDuplicate {
 
     private static int removeDup(int[] arr) {
 
-        int j =0;
+        int j = 0;
         int n = arr.length;
        for (int i =0;i<n;i++){
             if (i < n-1 && arr[i] == arr[i+1]) {
@@ -23,8 +23,7 @@ public class RemoveDuplicate {
             }
             arr[j++] = arr[i];
 
-        }
-
+       }
         return j;
     }
 }
