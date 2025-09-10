@@ -21,7 +21,7 @@ public class minOfThreeArrays {
 
     private static int checkMinDiff(int[] a, int[] b, int[] c) {
 
-        int i=0;
+        int i = 0;
         int j = 0;
         int k = 0;
         int ans = Integer.MAX_VALUE;
