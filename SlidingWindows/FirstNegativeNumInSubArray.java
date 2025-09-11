@@ -24,8 +24,7 @@ public class FirstNegativeNumInSubArray {
                 q.add(arr[j]);
             }
             if (j-i+1==k){
-
-                if (q.isEmpty()){
+                if (q.isEmpty()){    // no negative found...
                     list.add(0);
                 }
                 else {
@@ -35,13 +34,9 @@ public class FirstNegativeNumInSubArray {
                         q.remove(r);
                     }
                 }
-
                i++;
-
             }
-
         }
-
        return list;
     }
 
