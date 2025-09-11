@@ -17,7 +17,7 @@ public class FirstNegativeNumInSubArray {
 
         int n = arr.length;
         List<Integer> list = new ArrayList<>(n-k+1);
-        Queue<Integer> q = new LinkedList<>();
+        Queue<Integer> q = new LinkedList<>();   // why queue. ....
         int i = 0;
         for(int j =0;j<n;j++){
             if (arr[j]<0){
