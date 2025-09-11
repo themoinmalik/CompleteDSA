@@ -19,7 +19,7 @@ public class maxOfSubArray {
 
     private static int[] checkMaxOfSubArray(int[] a, int k) {
 
-        PriorityQueue<Integer> q = new PriorityQueue<>(Comparator.reverseOrder());
+        PriorityQueue<Integer> q = new PriorityQueue<>(Comparator.reverseOrder());  // taki max value peek pr mile. q.peek = max;
         int i = 0;
         int n = a.length;
         int ind = 0;
