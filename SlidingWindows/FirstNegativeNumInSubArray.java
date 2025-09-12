@@ -8,7 +8,8 @@ public class FirstNegativeNumInSubArray {
     public static void main(String[] args) {
         int[] arr = new int[]{10, -1, -5, 7, -15, 20, 18, 24};
         int windSize = 2;
-        List<Integer> ans = findNegNumber(arr, windSize);
+        List<Integer> ans = negSubArray(arr, windSize);
+//        List<Integer> ans = findNegNumber(arr, windSize);
         System.out.println(ans);
 
     }
@@ -38,6 +39,44 @@ public class FirstNegativeNumInSubArray {
             }
         }
        return list;
+    }
+
+
+    private static List<Integer> negSubArray(int[] arr, int k){
+
+        int i = 0;
+        int j = 0;
+        int size = arr.length;
+
+        List<Integer> negArr = new ArrayList<>();
+        List<Integer> result = new ArrayList<>();
+
+        while (j<size){
+
+            if (arr[j]<0){
+                negArr.add(arr[j]);
+            }
+
+            if (j-i+1<k){
+                j++;
+            } else if (j-i+1==k) {
+                if (!negArr.isEmpty()){
+                    result.add(negArr.getFirst());
+                } else {
+                    result.add(0);
+                }
+
+                if (arr[i]<0){
+                    negArr.remove(Integer.valueOf(arr[i]));
+                }
+                i++;
+                j++;
+            }
+
+        }
+
+        return result;
+
     }
 
 }

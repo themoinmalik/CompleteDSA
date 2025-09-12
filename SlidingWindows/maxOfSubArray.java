@@ -36,7 +36,6 @@ public class maxOfSubArray {
                 i++;
             }
         }
-
         return maxarr;
     }
 }
