@@ -65,16 +65,13 @@ public class FirstNegativeNumInSubArray {
                 } else {
                     result.add(0);
                 }
-
                 if (arr[i]<0){
                     negArr.remove(Integer.valueOf(arr[i]));
                 }
                 i++;
                 j++;
             }
-
         }
-
         return result;
 
     }
