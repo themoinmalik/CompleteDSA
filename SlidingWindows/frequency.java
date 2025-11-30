@@ -12,19 +12,12 @@ public class frequency {
     public static void main(String[] args) {
 
         String str = "SUCCESS";
-
         char[] chars = str.toCharArray();
-
         Map<Character, Integer> map = new LinkedHashMap<>();
 
         for (char c:chars){
             map.put(c, map.getOrDefault(c,0) +1);
         }
-
-//        System.out.println(map);
-
-        //print in this format:
-//        s3u1c2e1
 
         StringBuilder resuilt = new StringBuilder();
 
@@ -32,9 +25,7 @@ public class frequency {
             resuilt.append(m.getKey()).append(m.getValue());
         }
 
-
         System.out.println(resuilt);
-
 
     }
 

@@ -1,36 +1,54 @@
 package src.recursion_backtracking;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 public class Permutation {
 
-    public List<List<Integer>> permutation(int[] arr){
+    int n = 3;  // size of string.
+    char[] str = new char[]{'A', 'B', 'C'};
+    char[] res = new char[n];
+    boolean[] sel = new boolean[n];
 
-        List<List<Integer>> result = new ArrayList<>();
-        List<Integer> list = new ArrayList<>();
-        solve(arr, result, list);
-        return result;
+    public void solve(int k){
 
-    }
-
-
-    public void solve(int[] arr, List<List<Integer>> result, List<Integer> list){
-
-        if (list.size() == arr.length){
-            result.add(new ArrayList<>(list));
+        //base condition....
+        if (k == n){
+            System.out.println(res);
+            return;
         }
 
-        for (int i = 0; i < arr.length; i++) {
-            if (list.contains(arr[i])){
-                continue;
+        // hypothesis.
+        for (int i = 0; i < n; i++) {
+            if (sel[i] == false){
+                if (isValid(str[i], k)){
+                    res[k] = str[i];
+                    sel[i] = true;
+                    solve(k+1);
+                    sel[i] = false;
+                }
+
             }
-            list.add(arr[i]);
-            solve(arr, result, list);
-            list.remove(list.size()-1);
+        }
+    }
+
+    public boolean isValid(char c, int k){
+
+        for (int i = 0; i < k; i++) {
+        if (c - res[k-1] == 1){
+            return false;
+        }
         }
 
+        return true;
+
     }
+
+
+    int sum = 0;
+
+   int convert(String str, int n){
+
+       if (str.length() == 0) return 0;
+
+       return convert(str, n-1 )*10 + str.charAt(n-1);
+
+   }
 }
